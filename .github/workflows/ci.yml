@@ -1,0 +1,28 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# practice-engine 本身只依赖 PyYAML。集成测试会读同级目录 item-spec 的示例练习包，所以并排检出；缺了就跳过那几项。
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: practice-engine
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: practice-engine
+      - uses: actions/checkout@v4
+        with:
+          repository: animind-ai/item-spec
+          path: item-spec
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+      - run: uv sync
+      - run: uvx ruff check .
+      - run: uv run pytest -q
+      - run: uv run practice-engine simulate --days 30

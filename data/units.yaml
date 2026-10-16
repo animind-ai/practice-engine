@@ -1,0 +1,455 @@
+# K12 数学单元与先修关系。
+# 来源：peiyu_k12_math_video_plan.md v0.2 §1.2 表格（完整关系以表格为准），回访加深边来自 §1.3 依赖图的粗箭头。
+# 字段：
+#   id / name / stage / domain：编号、单元名、学段、领域或主线
+#   hard：硬先修（不掌握就学不下去）；补先修只沿这些边往回推
+#   hard_any：二选一的硬先修组，学过其中任意一个即可（如 S5 的"H7 / J14"）
+#   soft：软先修 / 表征复用，只作提示
+#   fit：做视觉洞察视频的适配度（high ★ / low ☆ / none）
+#   note：表格里写在括号中的说明
+# 学段：primary-low 1–2 年级 | primary-mid 3–4 年级 | primary-high 5–6 年级 | junior 7–9 年级 | senior 高中 | extension 拓展
+# 注意：各单元落在哪个年级因教材版本而异（规划 §1.1 注 1），H5 的学段归属待核实（注 2）。
+# 许可：CC BY 4.0，Boxi Yu。
+version: 1
+
+units:
+  - id: P1
+    name: 20 以内 / 100 以内数的认识、位值
+    stage: primary-low
+    domain: 数与代数
+    hard: []
+    soft: []
+    fit: low
+  - id: P2
+    name: 加减法与凑十、破十；等号表示"两边一样多"
+    stage: primary-low
+    domain: 数与代数
+    hard: [P1]
+    soft: []
+    fit: high
+  - id: P3
+    name: 乘法的意义（几个几）、乘法口诀
+    stage: primary-low
+    domain: 数与代数
+    hard: [P2]
+    soft: []
+    fit: high
+  - id: P3b
+    name: 除法的意义（平均分、包含除）、表内除法
+    stage: primary-low
+    domain: 数与代数
+    hard: [P3]
+    soft: []
+    fit: high
+  - id: P4
+    name: 认识图形、长度单位
+    stage: primary-low
+    domain: 图形与几何
+    hard: []
+    soft: []
+    fit: low
+  - id: P5
+    name: 分类与简单数据整理
+    stage: primary-low
+    domain: 统计与概率
+    hard: []
+    soft: []
+    fit: none
+  - id: P6
+    name: 综合与实践（主题活动）
+    stage: primary-low
+    domain: 综合与实践
+    hard: []
+    soft: []
+    fit: none
+  - id: M1
+    name: 多位数乘除法（竖式）
+    stage: primary-mid
+    domain: 数与代数
+    hard: [P3, P3b]
+    soft: []
+    fit: high
+  - id: M2
+    name: 运算律（交换、结合、分配）
+    stage: primary-mid
+    domain: 数与代数
+    hard: [P3, M1]
+    soft: [M5]
+    fit: high
+  - id: M3
+    name: 分数的初步认识（含数轴上的分数）
+    stage: primary-mid
+    domain: 数与代数
+    hard: [P3b]
+    soft: []
+    fit: high
+  - id: M4
+    name: 小数的意义
+    stage: primary-mid
+    domain: 数与代数
+    hard: [P1, M3]
+    soft: []
+    fit: low
+  - id: M5
+    name: 周长与面积（长方形、正方形）
+    stage: primary-mid
+    domain: 图形与几何
+    hard: [P4, P3]
+    soft: []
+    fit: high
+  - id: M6
+    name: 角、平行与垂直
+    stage: primary-mid
+    domain: 图形与几何
+    hard: [P4]
+    soft: []
+    fit: low
+  - id: M7
+    name: 条形统计图、平均数
+    stage: primary-mid
+    domain: 统计与概率
+    hard: [P5, P3b]
+    soft: []
+    fit: high
+  - id: H1
+    name: 因数与倍数
+    stage: primary-high
+    domain: 数与代数
+    hard: [M1]
+    soft: []
+    fit: low
+  - id: H2
+    name: 分数的意义与基本性质（分数 = 除法）、通分约分
+    stage: primary-high
+    domain: 数与代数
+    hard: [M3, P3b, H1]
+    soft: []
+    fit: high
+  - id: H3
+    name: 分数加减乘除
+    stage: primary-high
+    domain: 数与代数
+    hard: [H2]
+    soft: []
+    fit: high
+  - id: H4
+    name: 比与比例
+    stage: primary-high
+    domain: 数与代数
+    hard: [H3]
+    soft: []
+    fit: high
+  - id: H5
+    name: 用字母表示数、简易方程
+    stage: primary-high
+    domain: 数与代数
+    hard: [M2]
+    soft: [P2]
+    fit: high
+    note: P2 是软先修：等号的关系性理解
+  - id: H6
+    name: 多边形面积（平行四边形、三角形、梯形）
+    stage: primary-high
+    domain: 图形与几何
+    hard: [M5]
+    soft: []
+    fit: high
+  - id: H7
+    name: 圆的周长与面积
+    stage: primary-high
+    domain: 图形与几何
+    hard: [H6]
+    soft: []
+    fit: high
+  - id: H8
+    name: 长方体、正方体、圆柱、圆锥的体积
+    stage: primary-high
+    domain: 图形与几何
+    hard: [H6, H7]
+    soft: []
+    fit: high
+  - id: H9
+    name: 可能性
+    stage: primary-high
+    domain: 统计与概率
+    hard: [M7]
+    soft: []
+    fit: low
+  - id: H10
+    name: 百分数（含百分数与数据）
+    stage: primary-high
+    domain: 数与代数 / 统计与概率
+    hard: [H2, H4]
+    soft: []
+    fit: low
+  - id: H11
+    name: 图形的分类与性质（三角形、四边形）
+    stage: primary-high
+    domain: 图形与几何
+    hard: [M6]
+    soft: []
+    fit: low
+  - id: H12
+    name: 综合与实践（主题活动）
+    stage: primary-high
+    domain: 综合与实践
+    hard: []
+    soft: []
+    fit: none
+  - id: J1
+    name: 有理数与数轴、有理数运算
+    stage: junior
+    domain: 数与式
+    hard: [H3]
+    soft: [M3]
+    fit: high
+    note: M3 是软先修：数轴
+  - id: J2
+    name: 整式、乘法公式、因式分解
+    stage: junior
+    domain: 数与式
+    hard: [J1, M2]
+    soft: [H6]
+    fit: high
+    note: H6 是软先修：面积模型
+  - id: J3
+    name: 一元一次方程、二元一次方程组
+    stage: junior
+    domain: 方程与不等式
+    hard: [H5, J2]
+    soft: []
+    fit: high
+  - id: J4
+    name: 不等式与不等式组
+    stage: junior
+    domain: 方程与不等式
+    hard: [J3]
+    soft: []
+    fit: low
+  - id: J5
+    name: 实数、平方根、二次根式
+    stage: junior
+    domain: 数与式
+    hard: [J1]
+    soft: []
+    fit: high
+  - id: J6
+    name: 平面直角坐标系
+    stage: junior
+    domain: 图形与坐标
+    hard: [J1]
+    soft: []
+    fit: low
+  - id: J7
+    name: 一次函数
+    stage: junior
+    domain: 函数
+    hard: [J3, J6, H4]
+    soft: []
+    fit: high
+  - id: J8
+    name: 一元二次方程
+    stage: junior
+    domain: 方程与不等式
+    hard: [J2, J5]
+    soft: [H6]
+    fit: high
+    note: H6 是软先修：几何配方
+  - id: J9
+    name: 二次函数
+    stage: junior
+    domain: 函数
+    hard: [J7, J8]
+    soft: []
+    fit: high
+  - id: J10
+    name: 反比例函数
+    stage: junior
+    domain: 函数
+    hard: [J7, H4]
+    soft: []
+    fit: low
+  - id: J11
+    name: 三角形、全等、勾股定理
+    stage: junior
+    domain: 图形的性质
+    hard: [H6, H11, J5]
+    soft: []
+    fit: high
+  - id: J11b
+    name: 尺规作图
+    stage: junior
+    domain: 图形的性质
+    hard: [H11]
+    soft: []
+    fit: low
+  - id: J12
+    name: 平移、旋转、轴对称、相似
+    stage: junior
+    domain: 图形的变化
+    hard: [J11, H4]
+    soft: []
+    fit: high
+  - id: J13
+    name: 锐角三角函数
+    stage: junior
+    domain: 图形的性质
+    hard: [J12, H4]
+    soft: []
+    fit: high
+  - id: J14
+    name: 圆
+    stage: junior
+    domain: 图形的性质
+    hard: [H7, J11]
+    soft: []
+    fit: high
+  - id: J15
+    name: 数据分析（平均数、中位数、方差）
+    stage: junior
+    domain: 抽样与数据分析
+    hard: [M7, H10]
+    soft: []
+    fit: low
+  - id: J16
+    name: 概率初步
+    stage: junior
+    domain: 随机事件的概率
+    hard: [H9, H3, H4]
+    soft: []
+    fit: high
+    note: H3、H4：概率是比值
+  - id: J17
+    name: 综合与实践（项目式学习）
+    stage: junior
+    domain: 综合与实践
+    hard: []
+    soft: []
+    fit: none
+  - id: S1
+    name: 集合、常用逻辑用语、不等式
+    stage: senior
+    domain: 预备知识
+    hard: [J4]
+    soft: []
+    fit: none
+  - id: S2
+    name: 函数概念与性质
+    stage: senior
+    domain: 函数
+    hard: [J7, J9]
+    soft: []
+    fit: high
+  - id: S3
+    name: 函数图像变换（平移、伸缩、对称）
+    stage: senior
+    domain: 函数
+    hard: [S2, J12]
+    soft: []
+    fit: high
+  - id: S4
+    name: 幂函数、指数函数、对数函数
+    stage: senior
+    domain: 函数
+    hard: [S2]
+    soft: []
+    fit: high
+  - id: S5
+    name: 三角函数（单位圆、弧度、诱导公式、图像）
+    stage: senior
+    domain: 函数
+    hard: [J13, S3]
+    hard_any: [[H7, J14]]
+    soft: []
+    fit: high
+    note: H7 / J14：弧长 → 弧度
+  - id: S6
+    name: 数列（等差、等比、递推）
+    stage: senior
+    domain: 函数
+    hard: [S2]
+    soft: []
+    fit: high
+  - id: S7
+    name: 一元函数的导数及其应用
+    stage: senior
+    domain: 函数
+    hard: [S2, S4, J7]
+    soft: [S6]
+    fit: high
+    note: S6 是软先修：差分
+  - id: S8
+    name: 平面向量及其应用
+    stage: senior
+    domain: 几何与代数
+    hard: [J6, J12]
+    soft: []
+    fit: high
+  - id: S9
+    name: 复数
+    stage: senior
+    domain: 几何与代数
+    hard: [S8]
+    soft: []
+    fit: high
+  - id: S10
+    name: 立体几何、空间向量
+    stage: senior
+    domain: 几何与代数
+    hard: [S8, H8, J11]
+    soft: []
+    fit: high
+  - id: S11
+    name: 平面解析几何（直线、圆、圆锥曲线）
+    stage: senior
+    domain: 几何与代数
+    hard: [J6, J14, S8, J3, J7, J8, J9]
+    soft: []
+    fit: high
+    note: J3、J7、J8、J9：联立与判别式
+  - id: S12
+    name: 计数原理、二项式定理
+    stage: senior
+    domain: 概率与统计
+    hard: [J16]
+    soft: []
+    fit: high
+  - id: S13
+    name: 概率（条件概率、分布）
+    stage: senior
+    domain: 概率与统计
+    hard: [S12]
+    soft: []
+    fit: high
+  - id: S14
+    name: 统计（抽样、回归）
+    stage: senior
+    domain: 概率与统计
+    hard: [J15, J6, J7, S13]
+    soft: []
+    fit: low
+  - id: S15
+    name: 数学建模活动与数学探究活动
+    stage: senior
+    domain: 建模与探究
+    hard: []
+    soft: []
+    fit: none
+    note: 先修视课题而定
+  - id: X1
+    name: 矩阵与线性变换
+    stage: extension
+    domain: 几何与代数（延伸）
+    hard: [S8, S9]
+    soft: []
+    fit: high
+    note: 拓展，非高中必修内容
+
+# 回访加深：同一思想在更高学段再次出现并加深（不是先修）
+deepens:
+  - [P3, M2]
+  - [M2, J2]
+  - [J2, X1]
+  - [J1, S9]
+  - [M5, H6]
+  - [H6, J2]

@@ -1,0 +1,39 @@
+[project]
+name = "practice-engine"
+version = "0.1.0"
+description = "数学练习调度：根据学生做过什么，决定现在该推哪几道题（不存数据、不带界面）"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Boxi Yu" }]
+requires-python = ">=3.11"
+dependencies = [
+  "PyYAML>=6.0",
+]
+
+[project.scripts]
+practice-engine = "practice_engine.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/practice_engine"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"data" = "practice_engine/data"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+extend-exclude = ["build"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "E741", "B905"]
