@@ -6,7 +6,7 @@
 - 依赖图：[`data/units.yaml`](data/units.yaml)，规划 §1.2 的 60 个单元和硬 / 软先修；
 - 学习记录：看了哪集视频、每道题什么时候做的、对不对、自信度几分。
 
-数据存在哪由使用方决定：开源播放器存在浏览器本地，培玉 App 存在自己的服务器。引擎是纯函数，不读时钟，同样的输入永远得到同样的输出。
+数据存在哪由使用方决定：开源播放器存在浏览器本地，闭源产品可以存在自己的服务器。引擎是纯函数，不读时钟，同样的输入永远得到同样的输出。
 
 ```python
 from datetime import datetime
@@ -91,4 +91,4 @@ uvx ruff check .
 
 作者：Boxi Yu（[@BoxiYu](https://github.com/BoxiYu)）
 
-代码以 [MIT 许可](LICENSE)发布。`data/units.yaml`（单元与先修关系，整理自培玉 K12 规划 §1.2）以 CC BY 4.0 发布。
+代码以 [MIT 许可](LICENSE)发布。`data/units.yaml`（单元与先修关系，整理自 animind K12 学习路径规划 §1.2）以 CC BY 4.0 发布。
