@@ -6,7 +6,7 @@
 
 数学练习调度：一个不依赖任何界面、也不存数据的小库。输入是"学生做过什么"，输出是"现在该推哪几道题，为什么"。
 
-- 题库：[item-spec](../item-spec) 练习包，引擎只读标注（题型、推送时机、单元、题型标签、变式、样例级别、迷思），不读题面；
+- 题库：[item-spec](https://github.com/animind-ai/item-spec) 练习包，引擎只读标注（题型、推送时机、单元、题型标签、变式、样例级别、迷思），不读题面；
 - 依赖图：[`data/units.yaml`](data/units.yaml)，K12 数学的 60 个单元和硬 / 软先修；
 - 学习记录：看了哪集视频、每道题什么时候做的、对不对、自信度几分。
 
@@ -101,7 +101,7 @@ uvx ruff check .
 
 Practice scheduling for math: a small library that depends on no UI and stores no data. The input is "what the student has done"; the output is "which items to push now, and why".
 
-- Item bank: [item-spec](../item-spec) practice packs; the engine reads only the annotations (item type, push slot, unit, skill tag, variation, worked-example level, misconception), never the problem text;
+- Item bank: [item-spec](https://github.com/animind-ai/item-spec) practice packs; the engine reads only the annotations (item type, push slot, unit, skill tag, variation, worked-example level, misconception), never the problem text;
 - Dependency graph: [`data/units.yaml`](data/units.yaml), the 60 K12 math units with hard / soft prerequisites;
 - Learning record: which videos were watched, when each item was attempted, whether it was correct, and the confidence rating.
 
