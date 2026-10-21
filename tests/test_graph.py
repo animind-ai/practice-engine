@@ -32,9 +32,9 @@ def test_cycle_and_unknown_prereq_are_rejected():
         UnitGraph([Unit("A", "a", "x", "d", soft=("Z",))])
 
 
-@pytest.mark.skipif(not PLAN.exists(), reason="不在 peiyuMath 工作区里")
+@pytest.mark.skipif(not PLAN.is_file(), reason="没有设置 PRACTICE_ENGINE_UNITS_TABLE")
 def test_units_match_the_plan_tables(graph):
-    """data/units.yaml 和规划 §1.2 表格逐行一致：编号、单元名，先修列里出现的每个编号都在。"""
+    """data/units.yaml 和原始单元表逐行一致：编号、单元名，先修列里出现的每个编号都在。"""
     rows = {}
     for line in PLAN.read_text(encoding="utf-8").splitlines():
         m = re.match(r"^\| ([PMHJSX]\d+b?) \| (.+?) \| (.+?) \| (.*?) \|", line)

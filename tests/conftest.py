@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -8,7 +9,8 @@ from practice_engine.demo import demo_specs
 
 ROOT = Path(__file__).resolve().parents[1]
 ITEM_SPEC_EXAMPLES = ROOT.parent / "item-spec" / "examples"
-PLAN = ROOT.parents[1] / "peiyu_k12_math_video_plan.md"
+# 可选：单元表的原始 Markdown 表格，用来核对 data/units.yaml；不设就跳过那个测试
+PLAN = Path(os.environ.get("PRACTICE_ENGINE_UNITS_TABLE", ""))
 T0 = datetime(2026, 9, 1, 19, 0)
 DAY = timedelta(days=1)
 
