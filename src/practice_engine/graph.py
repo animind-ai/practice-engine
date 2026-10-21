@@ -94,7 +94,7 @@ class UnitGraph:
 
     @classmethod
     def load(cls, path: str | Path | None = None) -> UnitGraph:
-        """不给路径时读自带的 data/units.yaml（规划 §1.2）。"""
+        """不给路径时读自带的 data/units.yaml。"""
         if path is None:
             repo_copy = Path(__file__).resolve().parents[2] / "data" / "units.yaml"
             text = repo_copy.read_text(encoding="utf-8") if repo_copy.exists() else (

@@ -1,4 +1,4 @@
-"""调度规则（ROADMAP §3.2，规划 §3.1 练习包）。
+"""调度规则：什么时候推哪些题（各项取值见 config.py）。
 
 输入：题库（Bank）+ 单元依赖图（UnitGraph）+ 一个学生的学习记录（History）+ 当前时间。
 输出：现在该推的题（Plan.items），每道题带推荐原因；外加只作提示的说明（Plan.notes）和下一次有题到期的时间（Plan.next_due）。
